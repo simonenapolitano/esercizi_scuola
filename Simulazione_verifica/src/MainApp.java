@@ -23,15 +23,7 @@ public class MainApp {
             scelta=input.nextInt();
             switch (scelta) {
                 case 1:
-                    for(int i = 0; i < panini.length - 1; i++){
-                        for(int j = 0; j <  panini.length - 1; j++){
-                            if(panini[j].getPrezzo() < panini[j+1].getPrezzo()){
-                                temp = panini[j];
-                                panini[j] = panini[j + 1];
-                                panini[j+1] = temp;
-                            }
-                        }
-                    }
+                    Sorting.bubbleSort(panini);
                     for (int i = 0; i < panini.length; i++) {
                         System.out.println("Panino " + (i+1) + ": " + panini[i].getNome() + "   " + panini[i].getPrezzo() +" euro(iva inclusa di " + (panini[i].getPrezzo() * panini[i].getIva()) + " euro)");
                     }
@@ -49,15 +41,7 @@ public class MainApp {
                     scontrino += panini[paninoBibita-1].getNome() + " " + quantita + " " + (quantita*panini[paninoBibita-1].getPrezzo()) + "\n"; 
                     break;
                 case 2:
-                    for(int i = 0; i < bibite.length - 1; i++){
-                        for(int j = 0; j <  bibite.length - 1; j++){
-                            if(bibite[j].getPrezzo() < bibite[j+1].getPrezzo()){
-                                temp = bibite[j];
-                                bibite[j] = bibite[j + 1];
-                                bibite[j+1] = temp;
-                            }
-                        }
-                    }
+                    Sorting.bubbleSort(bibite);
                     for (int i = 0; i < bibite.length; i++) {
                         System.out.println("Bibita " + (i+1) + ": " + bibite[i].getNome() + "   " + bibite[i].getPrezzo() +" euro(iva inclusa di " + (bibite[i].getPrezzo() * bibite[i].getIva()) + " euro)");
                     }
