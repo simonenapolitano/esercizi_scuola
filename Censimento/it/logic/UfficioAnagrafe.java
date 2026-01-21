@@ -1,6 +1,9 @@
+package it.logic;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import it.model.Cittadino;
 
 public class UfficioAnagrafe{
     ArrayList<Cittadino> registro = new ArrayList<Cittadino>();
