@@ -35,10 +35,9 @@ public class Cittadino{
     public void setCodiceFiscale(String codiceFiscale){
         this.codiceFiscale = codiceFiscale;
     }
-
+    
     @Override
     public String toString() {
-        
         return "Nome " + nome + "   Cognome " + cognome;
     }
 }

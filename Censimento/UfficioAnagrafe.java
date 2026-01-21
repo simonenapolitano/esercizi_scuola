@@ -7,7 +7,7 @@ public class UfficioAnagrafe{
 
     public UfficioAnagrafe(){
         Scanner scanner = new Scanner(System.in);
-        int scelta;
+        int scelta, sceltaDettagli = 0;
         registro.add(new Cittadino("Mario", "Rossi", 20, "1"));
         registro.add(new Cittadino("Luca", "Verdi", 19, "2"));
         registro.add(new Cittadino("Marco", "Gialli", 17, "3"));
@@ -28,11 +28,14 @@ public class UfficioAnagrafe{
                     do{
                         try {
                             System.out.println("Inserisci il numero del cittadino che vuoi vedere: ");
-                            scelta-=1;
+                            sceltaDettagli = scanner.nextInt();
+                            sceltaDettagli-=1;
                             try {
-                                System.out.println(registro.get(scelta) + "    " +  registro.get(scelta).getEta() + "    " + registro.get(scelta).getCodiceFiscale());
-                                scelta = scanner.nextInt();
-                                throw new IndexOutOfBoundsException("Cittadino " + scelta + " non esistente!");
+                                System.out.println(registro.get(sceltaDettagli) + "    Eta' " +  registro.get(sceltaDettagli).getEta() + "    Codice Fiscale " + registro.get(sceltaDettagli).getCodiceFiscale() + "\n");
+
+                                if(sceltaDettagli < 0 || sceltaDettagli > registro.size()){
+                                    throw new IndexOutOfBoundsException("Cittadino " + sceltaDettagli + " non esistente!");
+                                }
                             } catch (IndexOutOfBoundsException e) {
                                 System.out.println(e.getMessage());
                                 continue;
@@ -41,8 +44,7 @@ public class UfficioAnagrafe{
                             System.out.println("Devi inserire un numero!");
                             continue;
                         }
-                    }while(scelta <= 0 || scelta > registro.size());
-                    
+                    }while(sceltaDettagli < 0 || sceltaDettagli > registro.size());
                     break;
                 case 2:
                     scanner.close();
@@ -51,10 +53,7 @@ public class UfficioAnagrafe{
                     System.out.println("Scelta [" + scelta + "] non valida!");
             }
 
-            
-        }while(true);
-        
-        
+        }while(true);   
     }
 
     public static void main(String[] args) {
