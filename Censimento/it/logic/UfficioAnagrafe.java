@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import it.exceptions.CittadinoMinorenneException;
 import it.model.Cittadino;
 
 public class UfficioAnagrafe{
@@ -34,6 +35,14 @@ public class UfficioAnagrafe{
                             sceltaDettagli = scanner.nextInt();
                             sceltaDettagli-=1;
                             try {
+                                try {
+                                    if(registro.get(sceltaDettagli).getEta() < 18){
+                                        throw new CittadinoMinorenneException();
+                                    }
+                                } catch (CittadinoMinorenneException e) {
+                                    System.out.println(e.getMessage());
+                                    continue;
+                                }
                                 System.out.println(registro.get(sceltaDettagli) + "    Eta' " +  registro.get(sceltaDettagli).getEta() + "    Codice Fiscale " + registro.get(sceltaDettagli).getCodiceFiscale() + "\n");
 
                                 if(sceltaDettagli < 0 || sceltaDettagli > registro.size()){
