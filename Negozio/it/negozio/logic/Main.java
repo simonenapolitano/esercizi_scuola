@@ -1,3 +1,8 @@
+import it.negozio.model.Abbigliamento;
+import it.negozio.model.CentroCommerciale;
+import it.negozio.model.Prodotto;
+import it.negozio.model.Ristorante;
+
 public class Main{
     public Main(){
         CentroCommerciale centroCommerciale = new CentroCommerciale();

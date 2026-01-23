@@ -1,3 +1,4 @@
+package it.negozio.model;
 public class Ristorante extends Negozio{
     private double prezzoCoperto;
     public Ristorante(String nome, double prezzoCoperto, Prodotto... p){

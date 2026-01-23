@@ -1,3 +1,6 @@
+package it.negozio.model;
+import it.negozio.exceptions.ValoreScontoException;
+
 public class Abbigliamento extends Negozio{
     public Abbigliamento(String nome, Prodotto... p){
         super(nome, p);

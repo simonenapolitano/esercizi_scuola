@@ -1,3 +1,4 @@
+package it.negozio.exceptions;
 public class ValoreScontoException extends Exception{
     public ValoreScontoException(String message){
         super(message);

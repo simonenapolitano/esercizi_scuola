@@ -1,4 +1,7 @@
+package it.negozio.model;
 import java.util.HashMap;
+
+import it.negozio.exceptions.ValoreScontoException;
 
 public class CentroCommerciale{
     private HashMap<String, Negozio> negozi = new HashMap<>();

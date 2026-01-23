@@ -1,3 +1,4 @@
+package it.negozio.model;
 public class Prodotto {
     private String nome;
     private double prezzo;
