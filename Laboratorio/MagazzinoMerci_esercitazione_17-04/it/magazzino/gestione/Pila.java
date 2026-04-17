@@ -17,10 +17,10 @@ public class Pila {
     }
 
     public String pop(){
-        Pacco p;
         if(first == null){
             return "<!>Il magazzino e' vuoto<!>";
         }
+        Pacco p;
         p = first;
         first = p.getNext();
         this.pesoSpedito = p.getPeso();
@@ -28,9 +28,6 @@ public class Pila {
     }
 
     public String stampaTop(){
-        if(first == null){
-            return "<!>Il magazzino e' vuoto<!>";
-        }
         return first.toString();
     }
 
@@ -49,9 +46,6 @@ public class Pila {
     }
 
     public String cercaPacco(String codiceRicercato){
-        if(first == null){
-            return "<!>Il magazzino e' vuoto<!>";
-        }
         Pacco p = first;
         while(p != null){
             if(p.getCodice().equals(codiceRicercato)){
@@ -63,9 +57,6 @@ public class Pila {
     }
 
     public int contaPacchiPesanti(Double sogliaPeso){
-        if(first == null){
-            return -1;
-        }
         Pacco p = first;
         int nPacchiPesanti = 0;
         while(p != null){
@@ -75,6 +66,10 @@ public class Pila {
             p = p.getNext();
         }
         return nPacchiPesanti;
+    }
+
+    public boolean isPilaVuota(){
+        return (first == null);
     }
 
     @Override

@@ -31,17 +31,29 @@ public class Main {
                     System.out.println("Ci sono " + pila.contaPacchi() + " pacchi in magazzino");
                     break;
                 case 4:
-                    System.out.println("Il pacco in cima: " + pila.stampaTop());
+                    if(pila.isPilaVuota()){
+                        System.out.println("<!>Il magazzino e' vuoto<!>");
+                        break;
+                    }
+                    System.out.println(pila.stampaTop());
                     break;
                 case 5:
                     System.out.println("Peso dei pacchi spediti fino ad adesso: " + pila.getPesoTotale());
                     break;
                 case 6:
+                    if(pila.isPilaVuota()){
+                        System.out.println("<!>Il magazzino e' vuoto<!>");
+                        break;
+                    }
                     System.out.println("Inserisci il codice del pacco: ");
                     codice = scanner.nextLine();
-                    System.out.println("Il pacco e' " + pila.cercaPacco(codice));
+                    System.out.println(pila.cercaPacco(codice));
                     break;
                 case 7:
+                    if(pila.isPilaVuota()){
+                        System.out.println("<!>Il magazzino e' vuoto<!>");
+                        break;
+                    }
                     System.out.println("Inserisci la soglia di peso: ");
                     peso = scanner.nextDouble();
                     scanner.nextLine();
@@ -53,6 +65,11 @@ public class Main {
             }
         }
     }
+
+    /*private boolean isPilaVuota(Pila pila){
+        Pila nuovaPila = pila;
+        return nuovaPila.pop().equals("<!>Il magazzino e' vuoto<!>");
+    }*/
 
     public static void main(String[] args) {
         new Main();

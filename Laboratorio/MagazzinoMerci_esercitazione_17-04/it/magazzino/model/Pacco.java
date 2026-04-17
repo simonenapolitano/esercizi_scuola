@@ -45,7 +45,7 @@ public class Pacco{
 
     @Override
     public String toString() {
-        return "Codice del pacco " + codice + " Descrizione " + descrizione + " Peso " + peso + " kg";
+        return " -Codice del pacco " + codice + "\n -Descrizione " + descrizione + "\n -Peso " + peso + " kg";
     }
 
 }
